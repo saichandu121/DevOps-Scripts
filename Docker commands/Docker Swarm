@@ -1,0 +1,52 @@
+## DOCKER SWARM COMMANDS
+
+## Initialise swarm on manager node
+docker swarm init --advertise-addr <manager-ip>
+
+## Adding a worker to swarm
+docker swarm join --token <token-id>
+
+## To list the nodes (only available in manager)
+docker node ls
+
+## To view information about docker
+docker info
+
+## To remove a node from swarm
+docker node rm <node-id> --force
+
+## To view docker swarm join token for manager
+docker swarm join-token manager
+
+## To view docker swarm join token for worker
+docker swarm join-token worker
+
+## To create a service
+docker service create --name <name-of-service> --replicas <number> -p
+<host-port>:<container-port> <image>
+
+##Update a service
+docker service update <parameter-you-want-be-update> <service-name>
+
+## To view services
+docker service ls
+
+## To remove a service
+docker service rm <service-name>
+
+## Docker stack deploy
+docker stack deploy -c <yaml-filename> <stackname>
+
+## List Stacks
+docker stack ls
+
+## Remove a stack
+docker stack rm <stackname>
+
+## Create an overlay network
+docker network create --driver overlay <network-name>
+
+## Create a service with an overlay network
+docker service create -name <name-of-service> --replicas <number> --network
+<network-name> <image>
+
