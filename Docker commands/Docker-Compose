@@ -1,0 +1,30 @@
+## Sample docker-compose.yaml file
+
+version: '3.8'
+services:
+web:
+image: 'nginx:latest'
+ports:
+- '8080:8080'
+app:
+image: 'ubuntu:latest'
+container_name: ubuntu
+
+## Docker-compose commands
+## run containers in the background
+docker-compose up -d
+
+## To run a docker-compose file
+docker-compose -f <filename> up -d
+
+## Stop and Remove Containers
+docker-compose down
+
+## Stop and remove containers with filename
+docker-compose -f <filename> down
+
+## Stop and remove containers, networks, and volumes, and then rebuild
+docker-compose down --volumes --rmi all
+
+## View output from containers
+docker-compose logs
