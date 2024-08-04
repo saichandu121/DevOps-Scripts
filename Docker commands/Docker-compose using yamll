@@ -1,0 +1,9 @@
+installing nginx and ubuntu using yaml file.
+
+version: '3.8'
+services: 
+    nginx-app
+        image: nginx:latest
+    ubuntu-app
+        image: ubuntu:latest
+        
