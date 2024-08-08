@@ -2,8 +2,8 @@ installing nginx and ubuntu using yaml file.
 
 version: '3.8'
 services: 
-    nginx-app
+    nginx-app:
         image: nginx:latest
-    ubuntu-app
+    ubuntu-app:
         image: ubuntu:latest
         command: tail -f /dev/null 
